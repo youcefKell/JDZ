@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+html{
+  scroll-behavior: smooth;
+}
+@layer base {
+  :root {
+    --background: 210 40% 99%;
+    --foreground: 222 60% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 60% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 60% 12%;
+
+    /* Brand: deep navy + electric blue */
+    --primary: 222 65% 14%;
+    --primary-foreground: 210 40% 99%;
+
+    --brand: 217 91% 55%;
+    --brand-foreground: 0 0% 100%;
+    --brand-glow: 199 95% 64%;
+
+    --secondary: 214 60% 96%;
+    --secondary-foreground: 222 60% 12%;
+
+    --muted: 214 40% 95%;
+    --muted-foreground: 222 15% 45%;
+
+    --accent: 217 91% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: 217 91% 55%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(217 91% 55%), hsl(199 95% 64%));
+    --gradient-hero-bg: radial-gradient(ellipse at top right, hsl(199 95% 64% / 0.18), transparent 60%),
+                        radial-gradient(ellipse at bottom left, hsl(217 91% 55% / 0.10), transparent 55%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 50% 98%));
+    --gradient-portrait: linear-gradient(135deg, hsl(217 91% 55%), hsl(222 65% 14%));
+
+    /* Shadows */
+    --shadow-soft: 0 10px 30px -12px hsl(222 60% 12% / 0.10);
+    --shadow-brand: 0 18px 40px -12px hsl(217 91% 55% / 0.45);
+    --shadow-card: 0 4px 20px -6px hsl(222 60% 12% / 0.08);
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Oswald', sans-serif; }
+  .font-script { font-family: 'Dancing Script', cursive; }
+
+  .gradient-brand { background: var(--gradient-brand); }
+  .gradient-text {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-bg { background: var(--gradient-hero-bg); }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-brand { box-shadow: var(--shadow-brand); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+
+  /* Decorative blob shape for hero portrait */
+  .portrait-shape {
+    clip-path: path('M 60 0 Q 0 0 10 80 L 30 380 Q 40 520 200 540 L 360 560 Q 460 540 460 420 L 460 80 Q 450 0 360 10 Z');
+  }
+
+  .dotted-bg {
+    background-image: radial-gradient(hsl(var(--brand) / 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
